@@ -39,7 +39,9 @@
           <div class="detail-wrapper clearfix">
             <div class="detail-main">
               <h1 class="name">{{ seller.name }}</h1>
-              <div class="star-wrapper"></div>
+              <div class="star-wrapper">
+                <star :size="48" :score="seller.score"></star>
+              </div>
               <div class="title">
                 <div class="line"></div>
                 <div class="text">优惠信息</div>
@@ -71,7 +73,7 @@
             </div>
           </div>
           <div class="detail-close" @click="hideDetail">
-            <i class="icon-close"></i>
+            <i class="icon-close">X</i>
           </div>
         </div>
       </transition>
@@ -80,11 +82,16 @@
 </template>
 
 <script>
+import star from "../star/star"
+
 export default {
   props: {
     seller: {
       type: Object,
     },
+  },
+  components: {
+    star,
   },
   data() {
     return {
@@ -249,6 +256,10 @@ export default {
           text-align: center
           font-size: 16px
           font-weight: 700
+        .star-wrapper
+          margin-top: 18px
+          padding: 2px 0
+          text-align: center
         .title
           display: flex
           width: 80%
@@ -304,7 +315,7 @@ export default {
       position: relative
       width: 32px
       height: 32px
-      margin: -64px auto 0 auto
+      margin: -140px auto 0 auto
       clear: both
       font-size: 32px
 </style>
