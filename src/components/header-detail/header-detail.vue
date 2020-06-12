@@ -4,8 +4,9 @@
       <div class="detail-wrapper clear-fix">
         <div class="detail-main">
           <h1 class="name">{{ seller.name }}</h1>
-          <!-- <div class="star-wrapper">
-          </div> -->
+          <div class="star-wrapper">
+            <star :size="48" :score="seller.score"></star>
+          </div>
           <div class="title">
             <div class="line"></div>
             <div class="text">优惠信息</div>
@@ -43,6 +44,7 @@
 
 <script>
 import SupportIco from "components/support-ico/support-ico"
+import Star from "components/star/star"
 
 export default {
   name: "header-detail",
@@ -61,6 +63,7 @@ export default {
   },
   components: {
     SupportIco,
+    Star,
   },
   methods: {
     show() {
@@ -106,6 +109,10 @@ export default {
         text-align: center
         font-size: $fontsize-large
         font-weight: 700
+      .star-wrapper
+        margin-top: 18px
+        padding: 2px 0
+        text-align: center
       .title
         display: flex
         width: 80%
