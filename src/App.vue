@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import WHeader from "./components/header/WHeader.vue"
+import WHeader from "./components/w-header/w-header.vue"
 import { getSeller } from "./api/index"
 
 export default {

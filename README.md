@@ -1,4 +1,4 @@
-# vue-order-cube
+# vue-sell-cube
 
 ## Project setup
 ```
