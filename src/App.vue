@@ -2,7 +2,7 @@
   <div id="app">
     <w-header :seller="seller"></w-header>
     <div class="tab-wrapper">
-      <tab :tabs="tabs"></tab>
+      <tab :tabs="tabs" :initialIndex="0"></tab>
     </div>
   </div>
 </template>
@@ -39,10 +39,10 @@ export default {
   },
   computed: {
     tabs() {
-      return [
-        { label: "商品", components: Goods, data: { seller: this.seller } },
-        { label: "评价", components: Ratings, data: { seller: this.seller } },
-        { label: "商家", components: Seller, data: { seller: this.seller } },
+      return [{ 
+        label: "商品", component: Goods, data: { seller: this.seller } },
+        { label: "评价", component: Ratings, data: { seller: this.seller } },
+        { label: "商家", component: Seller, data: { seller: this.seller } },
       ]
     },
   },
